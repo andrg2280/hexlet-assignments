@@ -1,11 +1,13 @@
 package exercise;
 
-import io.javalin.Javalin;
-import java.util.List;
-import io.javalin.http.NotFoundResponse;
-import exercise.model.User;
 import exercise.dto.users.UserPage;
 import exercise.dto.users.UsersPage;
+import io.javalin.Javalin;
+
+import java.util.List;
+
+import exercise.model.User;
+import io.javalin.http.NotFoundResponse;
 import java.util.Collections;
 import java.util.Optional;
 
@@ -20,8 +22,11 @@ public final class App {
             config.plugins.enableDevLogging();
         });
 
-        // BEGIN
+
         app.get("/users/{id}", ctx -> {
+            //  var userId = (ctx.pathParam("id"));
+            // var userId = ctx.pathParamAsClass("id", Integer.class);
+
             var userId = ctx.pathParam("id");
 
             Optional<User> us = USERS.stream()
@@ -41,6 +46,9 @@ public final class App {
 
             ctx.render("users/index.jte", Collections.singletonMap("page", page));
         });
+
+        //  ctx.render("users/index.jte");});
+
         // END
 
         app.get("/", ctx -> {
@@ -50,6 +58,7 @@ public final class App {
         return app;
     }
 
+    //<td><a href='/users/show?id=${users.get("id")}'>${users.get("id")}</a></td>
     public static void main(String[] args) {
         Javalin app = getApp();
         app.start(7070);
