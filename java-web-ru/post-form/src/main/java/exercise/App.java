@@ -42,6 +42,7 @@ public final class App {
             var passwordConfirmation = ctx.formParam("passwordConfirmation");
 
             firstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
+            lastName = lastName.substring(0, 1).toUpperCase() + lastName.substring(1);
             password = Security.encrypt(password);
 
             var user = new User(firstName, lastName, email, password);
