@@ -4,7 +4,7 @@
 @template.layout.page(content = @`
     <h2>Edit Post</h2>
 
-    <form action="/posts/${page.getId()}/edit" method="post">
+    <form action="/posts/${page.getId()}" method="post">
         <div class="mb-3">
             <label for="postName" class="form-label">Post Name</label>
             <input type="text" class="form-control" id="body" name="name" value="${page.getName()}">
