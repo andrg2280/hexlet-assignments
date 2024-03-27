@@ -12,13 +12,10 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "HelloServlet", urlPatterns = "/hello")
 public class HelloServlet extends HttpServlet {
     // BEGIN
-    public class WelcomeServlet extends HttpServlet {
-        @Override
-        public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException,
-                ServletException {
-            PrintWriter out = response.getWriter();
-            out.println("Hello, Hexlet!");
-        }
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        PrintWriter out = response.getWriter();
+        out.println("Hello, user1!");
     }
     // END
 }
