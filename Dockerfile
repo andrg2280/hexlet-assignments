@@ -1,8 +1,8 @@
-FROM gradle:7.4.0-jdk17
+FROM gradle:8.4-jdk20
 
-WORKDIR /app
+WORKDIR /java-web-ru/database
 
-COPY /app .
+COPY /java-web-ru/database .
 
 RUN gradle installDist
 
