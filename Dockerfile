@@ -6,4 +6,4 @@ COPY /java-web-ru/database .
 
 RUN gradle installDist
 
-CMD ./build/install/app/bin/app
+CMD ./build/install/mvc/bin/mvc

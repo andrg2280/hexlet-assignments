@@ -3,3 +3,5 @@ test:
 
 start:
 	./gradlew run
+build:
+	./gradlew installDist
